@@ -69,6 +69,17 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+.toggle-button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -94,7 +105,7 @@
     <!-- Bloque de proyectos -->
     <div class="block">
         <section class="projects">
-            <h2 style="color: #007bff; text-align: center;">Proyectos Recientes</h2>
+            <h2 style="color: #007bff; text-align: center;">Proyecto Recientes</h2>
             <div class="project">
                 <a href="https://drive.google.com/file/d/12qAhzYYBfWCNpGUzWpchO4AyFo9iS5Lu/view?usp=sharing" target="_blank">
                     <img src="https://th.bing.com/th/id/OIG.UYQzOH_wlENnEb9OlDAc?pid=ImgGn" alt="Proyecto 1" style="max-width: 50%; height: auto; margin: 0 auto;">
@@ -103,12 +114,14 @@
                 <h3>Prototipo de Aplicación Móvil: 'Boat Control'</h3></a>
                 <p style="text-align: justify;">Explora el fascinante mundo detrás del diseño del prototipo de la aplicación móvil 'Boat Control' para botes no tripulados. Diseñé un prototipo de aplicación móvil que mejora la experiencia de los operadores de botes para el transporte de alimentos entre islas.</p>
             </div>
+            <button class="toggle-button" onclick="toggleCaseBlock()">Ver más...</button>
+
             <!-- Repite el bloque del proyecto para cada proyecto adicional -->
         </section>
     </div>
 
     <!-- Bloque del caso práctico -->
-    <div class="block">
+    <div class="block" id="caseBlock" style="display: none;">
         <section class="case">
             <h2 style="font-size: 1.8em;">Diseño del Prototipo de la Aplicación Móvil 'Boat Control' para Botes No Tripulados (USV)</h2>
             <p>Ejecutor del proyecto: Alejandro Russi Bohórquez, Diseñador UX | 21/Diciembre/2023</p>
@@ -128,9 +141,81 @@
         </section>
     </div>
 
+
+    <!-- Bloque de proyectos -->
+    <div class="block">
+        <section class="projects">
+            <h2 style="color: #007bff; text-align: left;">Proyecto 2</h2>
+            <div class="project">
+                <a href="https://drive.google.com/file/d/1lPiWcPBuRZxDXd6b89Vgsfhdh1RJlgc1/view?usp=drive_link" target="_blank">
+                    <img src="https://th.bing.com/th/id/OIG.gHzdhIYS73qpgg1volX.?w=1024&h=1024&rs=1&pid=ImgDetMain" alt="Proyecto 1" style="max-width: 50%; height: auto; margin: 0 auto;">
+                </a>
+                <a href="https://drive.google.com/file/d/1lPiWcPBuRZxDXd6b89Vgsfhdh1RJlgc1/view?usp=drive_link" target="_blank">
+                <h3>Prototipo de diseño del sitio web: 'PetLovers'</h3></a>
+                <p style="text-align: justify;">Este prototipo ofrece una experiencia de usuario agradable y amigable por la simplicidad en el flujo de usuario y el buen contraste entre colores.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bloque del caso práctico -->
+    <div class="block" id="caseBlock1" style="display: none;">
+        <section class="case">
+            <h2 style="font-size: 1.8em;">Diseño del Prototipo de la Aplicación Móvil 'Boat Control' para Botes No Tripulados (USV)</h2>
+            <p>Ejecutor del proyecto: Alejandro Russi Bohórquez, Diseñador UX | 21/Diciembre/2023</p>
+            <br>
+            <p style="text-align: center;"><b>Explorando el Viaje</b></p> <p>La aplicación 'Boat Control' se concibió con un propósito claro: simplificar y potenciar la gestión de botes no tripulados. Desde la navegación hasta la carga y descarga de alimentos, cada detalle se ha diseñado cuidadosamente para ofrecer una interfaz intuitiva y eficiente.</p>
+            <br>
+            <p style="text-align: center;"><b>Diseño en Acción</b></p><p>A través de métodos centrados en la funcionalidad y principios de diseño visual, la aplicación se convirtió en un lienzo donde los colores de la navegación se fusionan con la simplicidad y la elegancia. El prototipo de alta fidelidad, desarrollado con la participación activa de usuarios, recibió comentarios muy buenos por su diseño minimalista y funcionalidad accesible.</p>
+            <br>
+            <p style="text-align: center;"><b>Descubre el Prototipo en Figma</b></p><p>En este link: <a href="https://www.figma.com/proto/xsGs5YLgG42W5vxWT14anA/Navigator-2?type=design&node-id=1-3&t=ifuv7VK7zcl7z2Vr-1&scaling=scale-down&page-id=0%3A1&starting-point-node-id=1%3A3&mode=design" target="_blank">Macros en Figma</a>, te invito a explorar los macros principales del prototipo. Sumérgete en la experiencia de 'Boat Control' y descubre cómo la selección de trayecto, el inicio del viaje y la monitorización se vuelven procesos fluidos y eficientes.</p>
+            <br>
+
+            <p style="text-align: center;"><b>Conclusión</b></p><p>Este proyecto es más que un diseño; es una solución efectiva para la logística de suministro de alimentos. Las sólidas bases de diseño, combinadas con un profundo entendimiento de las necesidades de los operadores de botes, han dado como resultado una aplicación que no solo cumple, sino que supera las expectativas.</p>
+            <br>
+            <p style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-style: oblique;"><b>¡Bienvenido a un Viaje Inolvidable!</b> Te invito a abrir el enlace, sumergirte en el prototipo y descubrir la innovación detrás de 'Boat Control'.</p>
+
+            <p style="font-size: 14px; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-style: oblique;">[Explora el <a href="https://www.figma.com/proto/xsGs5YLgG42W5vxWT14anA/Navigator-2?node-id=1-3&starting-point-node-id=1%3A3&scaling=scale-down&mode=design&t=4Z5qhsX8Au5D0SIW-1" target="_blank">Prototipo en Figma</a>]</p>
+        </section>
+    </div>
+
+
+
+
+    <!-- Bloque de proyectos -->
+    <div class="block">
+        <section class="projects">
+            <h2 style="color: #007bff; text-align: left;">Proyecto 3 (In progress)</h2>
+            <div class="project">
+                <a href="https://www.shutterstock.com/image-vector/under-construction-concept-warning-tape-260nw-1517130032.jpg	" target="_blank">
+                    <img src="https://th.bing.com/th/id/OIG._Wg.o1EDPNeSbJwDaG_C?pid=ImgGn" alt="Proyecto 1" style="max-width: 50%; height: auto; margin: 0 auto;">
+                </a>
+                <a href="https://www.shutterstock.com/image-vector/under-construction-concept-warning-tape-260nw-1517130032.jpg" target="_blank">
+                <h3>Diseño de una plataforma para controlar casas inteligentes con AR/AV</h3></a>
+                <p style="text-align: justify;">En proceso de creación...</p>
+            </div>
+        </section>
+    </div>
+
+
     <!-- Script de interactividad -->
     <script>
-        // Mantén tu script aquí
+          function toggleCaseBlock() {
+            var caseBlock = document.getElementById('caseBlock');
+            if (caseBlock.style.display === 'none') {
+                caseBlock.style.display = 'block';
+            } else {
+                caseBlock.style.display = 'none';
+            }
+        }
+
+            function toggleCaseBlock1() {
+            var caseBlock1 = document.getElementById('caseBlock1');
+            if (caseBlock1.style.display === 'none') {
+                caseBlock1.style.display = 'block';
+            } else {
+                caseBlock1.style.display = 'none';
+            }
+        }
     </script>
 
 </body>
