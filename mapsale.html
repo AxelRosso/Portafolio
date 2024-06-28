@@ -13,17 +13,57 @@
             padding: 5px; /* Añade un poco de padding */
         }
         .filter-container {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
+    .legend-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .legend {
+        background: white;
+        padding: 10px;
+        border: 2px solid #ccc;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-right: 20px;
+    }
+    .legend h3 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    .legend ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .legend li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 5px;
+    }
+    .legend span {
+        display: inline-block;
+        width: 15px;
+        height: 15px;
+        margin-right: 10px;
+        border: 1px solid #ccc;
+    }
+    .filter-container {
+        flex: 1;
+    }
     </style>
 </head>
 <body>
+
     <div class="filter-container">
         <label for="categorySelector">Filtrar por Categoría:</label>
         <select id="categorySelector">
             <option value="All">Todas</option>
             <option value="Ciencias Agrícolas">Ciencias Agrícolas</option>
-            <option value="Ciencias Médicas y de Salud">Ciencias Médicas y de la Salud</option>
+            <option value="Ciencias Médicas y de la Salud">Ciencias Médicas y de la Salud</option>
             <option value="Ciencias Naturales">Ciencias Naturales</option>
             <option value="Ciencias Sociales">Ciencias Sociales</option>
             <option value="Humanidades">Humanidades</option>
@@ -31,7 +71,7 @@
             <option value="Ingeniería y Tecnología">Ingeniería y Tecnología</option>
         </select>
     </div>
-<div class="filter-container">
+    <div class="filter-container">
     <label for="citySelector">Filtrar por Ciudad o Municipio:</label>
     <select id="citySelector">
         <option value="All">Todas</option>
@@ -95,10 +135,29 @@
     </select>
 </div>
 
+<div class="legend-container">
+        <div class="legend">
+            <h3>Categorías</h3>
+            <ul>
+                <li><span style="background-color: green;"></span> Ciencias Agrícolas</li>
+                <li><span style="background-color: red;"></span> Ciencias Médicas y de la Salud</li>
+                <li><span style="background-color: blue;"></span> Ciencias Naturales</li>
+            </ul>
+            <ul>
+                <li><span style="background-color: purple;"></span> Ciencias Sociales</li>
+                <li><span style="background-color: orange;"></span> Humanidades</li>
+                <li><span style="background-color: gray;"></span> Industrial</li>
+            </ul>
+            <ul>
+                <li><span style="background-color: yellow;"></span> Ingeniería y Tecnología</li>
+            </ul>
+        </div>
+    </div>
+
     <div id="map"></div>
     <script>
         const centros = [
-{
+            {
 "nombre": "CINTEL",
     "lat": 4.690793,
     "lng": -74.031831,
@@ -6226,9 +6285,514 @@
         "2023": 3,
         "2024": 3
     }
+},
+{
+    "nombre": "Grupo de investigación Pharos en Ciencia Tecnología y Salud PHAROS",
+    "lat": 10.3910,
+    "lng": -75.4794,
+    "ciudad": "Cartagena",
+    "categoria": "Ciencias Médicas y de la Salud",
+    "publicaciones": {
+        "2014": 1,
+        "2016": 1,
+        "2017": 3,
+        "2019": 2,
+        "2022": 1
+    }
+},
+{
+    "nombre": "Investigación para la conservación en el Neotrópico SELVA",
+    "lat": 4.6097,
+    "lng": -74.0817,
+    "ciudad": "Bogotá",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2009": 1,
+        "2010": 1,
+        "2011": 4,
+        "2012": 9,
+        "2013": 3,
+        "2014": 1,
+        "2015": 3,
+        "2016": 2,
+        "2017": 2,
+        "2018": 2,
+        "2019": 1,
+        "2020": 8,
+        "2021": 8,
+        "2022": 3,
+        "2023": 3,
+        "2024": 1
+    }
+},
+{
+    "nombre": "CINPIC",
+    "lat": 8.7575,
+    "lng": -75.8864,
+    "ciudad": "Montería",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2015": 1
+    }
+},
+{
+    "nombre": "INBIANAM",
+    "lat": 1.6144,
+    "lng": -75.6062,
+    "ciudad": "Florencia",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2016": 2,
+        "2018": 1,
+        "2019": 2,
+        "2020": 1,
+        "2021": 1,
+        "2022": 1
+    }
+},
+{
+    "nombre": "UAGIFS",
+    "lat": 1.6144,
+    "lng": -75.6062,
+    "ciudad": "Florencia",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2008": 2,
+        "2010": 1,
+        "2011": 1,
+        "2023": 1,
+        "2024": 1
+    }
+},
+{
+    "nombre": "SICA",
+    "lat": 1.6144,
+    "lng": -75.6062,
+    "ciudad": "Florencia",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2019": 1,
+        "2022": 1
+    }
+},
+{
+    "nombre": "CEMPA",
+    "lat": 2.4448,
+    "lng": -76.6147,
+    "ciudad": "Popayán",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2005": 1,
+        "2006": 1,
+        "2011": 1,
+        "2016": 1,
+        "2017": 1,
+        "2018": 1,
+        "2019": 2,
+        "2020": 4,
+        "2021": 2,
+        "2023": 2
+    }
+},
+{
+    "nombre": "CEIFI",
+    "lat": 4.5339,
+    "lng": -75.6811,
+    "ciudad": "Armenia",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2005": 1,
+        "2008": 1,
+        "2013": 2,
+        "2018": 1,
+        "2022": 1
+    }
+},
+{
+    "nombre": "GYMOL",
+    "lat": 4.5339,
+    "lng": -75.6811,
+    "ciudad": "Armenia",
+    "categoria": "Ciencias Médicas y de la Salud",
+    "publicaciones": {
+        "2006": 1,
+        "2009": 1,
+        "2012": 3,
+        "2013": 2,
+        "2014": 3,
+        "2016": 1,
+        "2017": 3,
+        "2018": 1,
+        "2020": 7,
+        "2021": 2,
+        "2022": 2,
+        "2023": 3,
+        "2024": 1
+    }
+},
+{
+    "nombre": "CIDERA",
+    "lat": 4.5339,
+    "lng": -75.6811,
+    "ciudad": "Armenia",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2006": 1,
+        "2009": 1,
+        "2012": 3,
+        "2013": 2,
+        "2014": 3,
+        "2016": 1,
+        "2017": 3,
+        "2018": 1,
+        "2020": 7,
+        "2021": 2,
+        "2022": 2,
+        "2023": 3,
+        "2024": 1
+    }
+},
+{
+    "nombre": "CIACER",
+    "lat": 3.4216,
+    "lng": -76.5205,
+    "ciudad": "Cali",
+    "categoria": "Ciencias Médicas y de la Salud",
+    "publicaciones": {
+        "2014": 2,
+        "2016": 7,
+        "2017": 1,
+        "2018": 8,
+        "2019": 6,
+        "2020": 5,
+        "2021": 6,
+        "2022": 7,
+        "2023": 6,
+        "2024": 3
+    }
+},
+{
+    "nombre": "GITC",
+    "lat": 5.33775,
+    "lng": -72.39586,
+    "ciudad": "Yopal",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2016": 1,
+        "2017": 3,
+        "2018": 2,
+        "2019": 3,
+        "2020": 5,
+        "2021": 9,
+        "2022": 2,
+        "2023": 1
+    }
+},
+{
+    "nombre": "CICMAR",
+    "lat": 10.98097,
+    "lng": -74.80175,
+    "ciudad": "Barranquilla",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2021": 1,
+        "2022": 1
+    }
+},
+{
+    "nombre": "GESPA",
+    "lat": 4.85839,
+    "lng": -74.0582,
+    "ciudad": "Chía",
+    "categoria": "Ciencias Médicas y de la Salud",
+    "publicaciones": {
+        "2023": 5,
+        "2024": 1
+    }
+},
+{
+    "nombre": "CCSSENA",
+    "lat": 4.8087174,
+    "lng": -75.690601,
+    "ciudad": "Pereira",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2015": 1,
+        "2016": 1,
+        "2017": 3,
+        "2018": 1,
+        "2019": 1,
+        "2020": 1,
+        "2021": 2,
+        "2022": 5,
+        "2023": 1
+    }
+},
+{
+    "nombre": "CUEROSENA",
+    "lat": 6.171093,
+    "lng": -75.615722,
+    "ciudad": "Itagüí",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2013": 1,
+        "2014": 2,
+        "2015": 3,
+        "2016": 4,
+        "2017": 4,
+        "2018": 2
+    }
+},
+{
+    "nombre": "CEFASENA",
+    "lat": 2.936191,
+    "lng": -75.280900,
+    "ciudad": "Neiva",
+    "categoria": "Ciencias Agrícolas",
+    "publicaciones": {
+        "2015": 1,
+        "2016": 1,
+        "2017": 1,
+        "2018": 3,
+        "2019": 1,
+        "2020": 3,
+        "2021": 7,
+        "2022": 2,
+        "2023": 1
+    }
+},
+{
+    "nombre": "CAESENA",
+    "lat": 4.861580,
+    "lng": -74.033596,
+    "ciudad": "Chía",
+    "categoria": "Ciencias Agrícolas",
+    "publicaciones": {
+        "2015": 1,
+        "2017": 1,
+        "2018": 1,
+        "2023": 1
+    }
+},
+{
+    "nombre": "CPASENA",
+    "lat": 5.4475,
+    "lng": -74.6648,
+    "ciudad": "La Dorada",
+    "categoria": "Ciencias Agrícolas",
+    "publicaciones": {
+        "2015": 2,
+        "2016": 3,
+        "2017": 7,
+        "2018": 8,
+        "2019": 2,
+        "2020": 2,
+        "2021": 2,
+        "2022": 3
+    }
+},
+{
+    "nombre": "CSGESENA",
+    "lat": 6.2442,
+    "lng": -75.5812,
+    "ciudad": "Medellín",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2017": 1,
+        "2018": 6,
+        "2019": 6,
+        "2021": 2,
+        "2022": 1
+    }
+},
+{
+    "nombre": "CDAASENA",
+    "lat": 10.6352,
+    "lng": -74.9228,
+    "ciudad": "Sabanalarga",
+    "categoria": "Ciencias Agrícolas",
+    "publicaciones": {
+        "2019": 3,
+        "2023": 2
+    }
+},
+{
+    "nombre": "CIMMSENA",
+    "lat": 1.7986,
+    "lng": -78.7492,
+    "ciudad": "Tumaco",
+    "categoria": "Ciencias Agrícolas",
+    "publicaciones": {
+        "2018": 3,
+        "2021": 2,
+        "2023": 2
+    }
+},
+{
+    "nombre": "CMESENA",
+    "lat": 4.6097,
+    "lng": -74.0817,
+    "ciudad": "Bogotá",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2016": 1,
+        "2017": 1,
+        "2019": 1
+    }
+},
+{
+    "nombre": "CCSSENA",
+    "lat": 10.9685,
+    "lng": -74.7813,
+    "ciudad": "Barranquilla",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2019": 1,
+        "2022": 1
+    }
+},
+{
+    "nombre": "CCITSENA",
+    "lat": 8.7575,
+    "lng": -75.8864,
+    "ciudad": "Montería",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2016": 2,
+        "2017": 1,
+        "2020": 1
+    }
+},
+{
+    "nombre": "CDATSENA",
+    "lat": 2.9273,
+    "lng": -75.2819,
+    "ciudad": "Neiva",
+    "categoria": "Ciencias Agrícolas",
+    "publicaciones": {
+        "2015": 1,
+        "2016": 1,
+        "2017": 6,
+        "2021": 1,
+        "2023": 1
+    }
+},
+{
+    "nombre": "CSFSENA",
+    "lat": 4.6097,
+    "lng": -74.0817,
+    "ciudad": "Bogotá",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2017": 1,
+        "2018": 5
+    }
+},
+{
+    "nombre": "CCSTSENA",
+    "lat": 4.4447,
+    "lng": -75.2424,
+    "ciudad": "Ibagué",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2016": 1,
+        "2017": 1,
+        "2020": 1,
+        "2021": 1,
+        "2022": 1
+    }
+},
+{
+    "nombre": "CEAISENA",
+    "lat": 3.4516,
+    "lng": -76.5319,
+    "ciudad": "Cali",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2017": 2,
+        "2021": 3
+    }
+},
+{
+    "nombre": "CCSENA",
+    "lat": 3.4516,
+    "lng": -76.5319,
+    "ciudad": "Cali",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2014": 1,
+        "2017": 1,
+        "2018": 3,
+        "2020": 1,
+        "2021": 2,
+        "2022": 1,
+        "2023": 2
+    }
+},
+{
+    "nombre": "CCASENA",
+    "lat": 6.2442,
+    "lng": -75.5812,
+    "ciudad": "Medellin",
+    "categoria": "Ingenieria y Tecnologia",
+    "publicaciones": {
+        "2014": 1,
+        "2016": 1,
+        "2017": 2,
+        "2019": 1
+    }
+},
+{
+    "nombre": "CBTASENA",
+    "lat": -4.215,
+    "lng": -69.941,
+    "ciudad": "Leticia",
+    "categoria": "Ciencias Naturales",
+    "publicaciones": {
+        "2018": 1
+    }
+},
+{
+    "nombre": "CIESSENA",
+    "lat": 7.894,
+    "lng": -72.505,
+    "ciudad": "Cúcuta",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2016": 1
+    }
+},
+{
+    "nombre": "CAFESENA",
+    "lat": 5.337,
+    "lng": -72.396,
+    "ciudad": "Yopal",
+    "categoria": "Ciencias Agrícolas",
+    "publicaciones": {
+        "2018": 2
+    }
+},
+{
+    "nombre": "CIPSENA",
+    "lat": 10.391,
+    "lng": -75.479,
+    "ciudad": "Cartagena",
+    "categoria": "Ingeniería y Tecnología",
+    "publicaciones": {
+        "2017": 1
+    }
 }
-
         ];
+
+        const categoryColors = {
+            "Ciencias Agrícolas": "green",
+            "Ciencias Médicas y de la Salud": "red",
+            "Ciencias Naturales": "blue",
+            "Ciencias Sociales": "purple",
+            "Humanidades": "orange",
+            "Industrial": "gray",
+            "Ingeniería y Tecnología": "yellow"
+        };
 
         let map = L.map('map').setView([4.710989, -74.072092], 6);
 
@@ -6239,13 +6803,17 @@
         let markers = [];
 
         centros.forEach((centro, index) => {
-            const marker = L.marker([centro.lat, centro.lng]).addTo(map).bindPopup(`<div>
+            const marker = L.circleMarker([centro.lat, centro.lng], {
+                color: categoryColors[centro.categoria],
+                radius: 8,
+                fillOpacity: 0.7
+            }).addTo(map).bindPopup(`<div>
                 <h3>${centro.nombre}</h3>
                 <p><strong>Categoría:</strong> ${centro.categoria}</p>
                 <p><strong>Ciudad:</strong> ${centro.ciudad}</p>
                 <div class="chart-container">
                     <canvas id="chart_${index}"></canvas>
-G                </div>
+                </div>
             </div>`);
 
             marker.on('popupopen', function() {
@@ -6303,10 +6871,12 @@ G                </div>
         });
 
         document.getElementById('citySelector').addEventListener('change', function() {
-            const city = this.value;
-            const category = document.getElementById('categorySelector').value;
-            filterMarkers(category, city);
+           
+        const city = this.value;
+        const category = document.getElementById('categorySelector').value;
+        filterMarkers(category, city);
         });
-    </script>
+</script>
+
 </body>
 </html>
